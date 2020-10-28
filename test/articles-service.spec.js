@@ -82,16 +82,16 @@ describe('Articles service object', function () {
     })
 
     //delete article
-    it(`deleteArticle() removes an article by id from 'blogful_articles' table`, () => {
-      const articleId = 3
-      return ArticlesService.deleteArticle(db, articleId)
-        .then(() => ArticlesService.getAllArticles(db))
-        .then(allArticles => {
-          // copy the test articles array without the "deleted" article
-          const expected = testArticles.filter(article => article.id !== articleId)
-          expect(allArticles).to.eql(expected)
-        })
-    })
+    // it(`deleteArticle() removes an article by id from 'blogful_articles' table`, () => {
+    //   const articleId = 3
+    //   return ArticlesService.deleteArticle(db, articleId)
+    //     .then(() => ArticlesService.getAllArticles(db))
+    //     .then(allArticles => {
+    //       // copy the test articles array without the "deleted" article
+    //       const expected = testArticles.filter(article => article.id !== articleId)
+    //       expect(allArticles).to.eql(expected)
+    //     })
+    // })
   
 
     // get a specific article

@@ -24,11 +24,11 @@ const ArticlesService = {
       .update(newArticleFields)
   },
   // delete article
-  getById(knex, id) {
-    return knex('blogful_articles')
-      .where({ id })
-      .delete()
-  },
+  // getById(knex, id) {
+  //   return knex('blogful_articles')
+  //     .where({ id })
+  //     .delete()
+  // },
 }
 
 
