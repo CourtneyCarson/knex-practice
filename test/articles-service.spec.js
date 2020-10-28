@@ -63,23 +63,23 @@ describe('Articles service object', function () {
         .into('blogful_articles')
         .insert(testArticles)
     })
-    // Update an article
-    // it(`updateArticle() updates an article from the 'blogful_articles' table`, () => {
-    //   const idOfArticleToUpdate = 3
-    //   const newArticleData = {
-    //     title: 'updated title',
-    //     content: 'updated content',
-    //     date_published: new Date(),
-    //   }
-    //   return ArticlesService.updateArticle(db, idOfArticleToUpdate, newArticleData)
-    //     .then(() => ArticlesService.getById(db, idOfArticleToUpdate))
-    //     .then(article => {
-    //       expect(article).to.eql({
-    //         id: idOfArticleToUpdate,
-    //         ...newArticleData,
-    //       })
-    //     })
-    // })
+    //Update an article
+    it(`updateArticle() updates an article from the 'blogful_articles' table`, () => {
+      const idOfArticleToUpdate = 3
+      const newArticleData = {
+        title: 'updated title',
+        content: 'updated content',
+        date_published: new Date(),
+      }
+      return ArticlesService.updateArticle(db, idOfArticleToUpdate, newArticleData)
+        .then(() => ArticlesService.getById(db, idOfArticleToUpdate))
+        .then(article => {
+          expect(article).to.eql({
+            id: idOfArticleToUpdate,
+            ...newArticleData,
+          })
+        })
+    })
 
     //delete article
     it(`deleteArticle() removes an article by id from 'blogful_articles' table`, () => {
